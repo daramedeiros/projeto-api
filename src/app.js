@@ -8,7 +8,11 @@ const alunas = require('./routes/alunasRoute')
 const professoras = require('./routes/professorasRoute')
 
 app.all('*', function(req, resp, next){
-    console.log('Ihhhh deu erro!!')
+    resp.header("Access-Control-Allow-Origin", "*")
+    resp.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    )
     next()
 })
 
